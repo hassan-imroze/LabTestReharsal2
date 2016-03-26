@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. App", "1. App", "{4A894542-B6B6-45EC-9C4C-45A007DF2411}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Service", "2. Service", "{84243555-9BBB-4253-945E-8CB2B0A60ED0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Repository", "3. Repository", "{0F304550-7863-449C-AAD6-3A24DE5C6584}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Model", "4. Model", "{27A1236D-E9F5-47D2-8652-927B60322B2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabTestReharsal.Model", "LabTestReharsal.Model\LabTestReharsal.Model.csproj", "{1AEAC3AF-EBA4-4EAD-AD1D-0B33E0C1A2F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabTestReharsal.Repository", "LabTestReharsal.Repository\LabTestReharsal.Repository.csproj", "{32168941-8B0C-4D3E-8509-58B5991AFB88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabTestReharsal.Service", "LabTestReharsal.Service\LabTestReharsal.Service.csproj", "{1F97393A-FD43-4AD7-A4B3-ED3B877B1F65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabTestReharsal.ViewModel", "LabTestReharsal.ViewModel\LabTestReharsal.ViewModel.csproj", "{0DE876E1-1621-42ED-9E61-41B0607C371D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabTestReharsal2.App", "LabTestReharsal2.App\LabTestReharsal2.App.csproj", "{95A0AD80-14BB-419B-A3B0-523989B3DFF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AEAC3AF-EBA4-4EAD-AD1D-0B33E0C1A2F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AEAC3AF-EBA4-4EAD-AD1D-0B33E0C1A2F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AEAC3AF-EBA4-4EAD-AD1D-0B33E0C1A2F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AEAC3AF-EBA4-4EAD-AD1D-0B33E0C1A2F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32168941-8B0C-4D3E-8509-58B5991AFB88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32168941-8B0C-4D3E-8509-58B5991AFB88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32168941-8B0C-4D3E-8509-58B5991AFB88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32168941-8B0C-4D3E-8509-58B5991AFB88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F97393A-FD43-4AD7-A4B3-ED3B877B1F65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F97393A-FD43-4AD7-A4B3-ED3B877B1F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F97393A-FD43-4AD7-A4B3-ED3B877B1F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F97393A-FD43-4AD7-A4B3-ED3B877B1F65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DE876E1-1621-42ED-9E61-41B0607C371D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DE876E1-1621-42ED-9E61-41B0607C371D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DE876E1-1621-42ED-9E61-41B0607C371D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DE876E1-1621-42ED-9E61-41B0607C371D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95A0AD80-14BB-419B-A3B0-523989B3DFF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95A0AD80-14BB-419B-A3B0-523989B3DFF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95A0AD80-14BB-419B-A3B0-523989B3DFF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95A0AD80-14BB-419B-A3B0-523989B3DFF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1AEAC3AF-EBA4-4EAD-AD1D-0B33E0C1A2F0} = {27A1236D-E9F5-47D2-8652-927B60322B2C}
+		{32168941-8B0C-4D3E-8509-58B5991AFB88} = {0F304550-7863-449C-AAD6-3A24DE5C6584}
+		{1F97393A-FD43-4AD7-A4B3-ED3B877B1F65} = {84243555-9BBB-4253-945E-8CB2B0A60ED0}
+		{0DE876E1-1621-42ED-9E61-41B0607C371D} = {27A1236D-E9F5-47D2-8652-927B60322B2C}
+		{95A0AD80-14BB-419B-A3B0-523989B3DFF9} = {4A894542-B6B6-45EC-9C4C-45A007DF2411}
+	EndGlobalSection
+EndGlobal
