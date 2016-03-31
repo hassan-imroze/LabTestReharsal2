@@ -49,4 +49,3 @@ var App;
     App.SignUpController = SignUpController;
     angular.module("app").controller("SignUpController", SignUpController);
 })(App || (App = {}));
-//# sourceMappingURL=SignUpController.js.map

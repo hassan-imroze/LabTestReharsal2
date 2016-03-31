@@ -47,7 +47,7 @@
 
             }
 
-            self.accService.SignIn(self.User);
+            self.accService.SignIn(self.User).then(success, error);
         }
     }
 

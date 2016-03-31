@@ -32,7 +32,7 @@ var App;
                 self.ErrorOrSuccessList.push(error.data);
                 self.isSaving = false;
             };
-            self.accService.SignIn(self.User);
+            self.accService.SignIn(self.User).then(success, error);
         };
         SigninController.$inject = ["AccountService"];
         return SigninController;
@@ -40,4 +40,3 @@ var App;
     App.SigninController = SigninController;
     angular.module("app").controller("SigninController", SigninController);
 })(App || (App = {}));
-//# sourceMappingURL=SigninController.js.map

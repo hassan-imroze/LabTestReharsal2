@@ -26,15 +26,17 @@ var App;
             var self = this;
             var deffered = this.qService.defer();
             var successCallback = function (result) {
+                console.log(result);
                 self.authService.AccountInfo.Username = result.data.userName;
                 self.authService.AccountInfo.AccessToken = result.data.access_token;
                 return deffered.resolve(result);
             };
             var errorCallback = function (error) {
+                console.log(error);
                 return deffered.reject(error);
             };
             var config = { headers: { 'Content-Type': "application/x-www-form-urlencoded" } };
-            var req = "username=" + data.Username + "&password=" + data.Password + "&grant_type=password";
+            var req = "grant_type=password&username=" + data.Username + "&password=" + data.Password;
             console.log(req);
             self.httpService.post('/Token', req, config).then(successCallback, errorCallback);
             return deffered.promise;
@@ -45,4 +47,3 @@ var App;
     App.AccountService = AccountService;
     angular.module("app").service("AccountService", AccountService);
 })(App || (App = {}));
-//# sourceMappingURL=AccountService.js.map
