@@ -35,7 +35,8 @@ var App;
             };
             var config = { headers: { 'Content-Type': "application/x-www-form-urlencoded" } };
             var req = "username=" + data.Username + "&password=" + data.Password + "&grant_type=password";
-            self.httpService.post('/token', req, config).then(successCallback, errorCallback);
+            console.log(req);
+            self.httpService.post('/Token', req, config).then(successCallback, errorCallback);
             return deffered.promise;
         };
         AccountService.$inject = ["$http", "$q", "AuthService"];
@@ -44,3 +45,4 @@ var App;
     App.AccountService = AccountService;
     angular.module("app").service("AccountService", AccountService);
 })(App || (App = {}));
+//# sourceMappingURL=AccountService.js.map

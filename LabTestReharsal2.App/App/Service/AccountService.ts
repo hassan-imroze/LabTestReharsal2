@@ -47,8 +47,8 @@
 
             var config: angular.IRequestShortcutConfig = { headers: { 'Content-Type': "application/x-www-form-urlencoded" } };
             var req = "username=" + data.Username + "&password=" + data.Password + "&grant_type=password";
-            
-            self.httpService.post('/token', req, config).then(successCallback, errorCallback);
+            console.log(req);
+            self.httpService.post('/Token', req, config).then(successCallback, errorCallback);
             return deffered.promise;
         }
 

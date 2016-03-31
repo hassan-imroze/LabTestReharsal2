@@ -7,3 +7,4 @@ var App;
     }());
     App.Register = Register;
 })(App || (App = {}));
+//# sourceMappingURL=Register.js.map

@@ -19,3 +19,4 @@ var App;
     }(Entity));
     App.Student = Student;
 })(App || (App = {}));
+//# sourceMappingURL=Student.js.map

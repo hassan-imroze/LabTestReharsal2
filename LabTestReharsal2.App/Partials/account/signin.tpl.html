@@ -1,0 +1,33 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <h3>
+                Sign In
+            </h3>
+
+            <form role="form" ng-submit="vm.Signin()">
+                <div class="form-group">
+                    <label for="txtEmail">
+                        Email
+                    </label>
+                    <input type="text" class="form-control" id="txtEmail" ng-model="vm.User.Username">
+                </div>
+                <div class="form-group">
+                    <label for="txtPass">
+                        Password
+                    </label>
+                    <input type="password" class="form-control" id="txtPass" ng-model="vm.User.Password">
+                </div>
+           
+                <ul class="{{vm.statusClass}}">
+                    <li ng-repeat="str in vm.ErrorOrSuccessList">
+                        {{str}}
+                    </li>
+                </ul>
+                <button type="submit" class="btn btn-primary" ng-disabled="vm.isSaving">
+                    Sign In
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

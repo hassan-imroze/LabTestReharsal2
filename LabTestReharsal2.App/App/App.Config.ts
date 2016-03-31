@@ -41,6 +41,6 @@
         }
     }
 
-    angular.module("app", ["ngResource", "ui.router"]);
+    angular.module("app", ["ngResource", "ui.router","LocalStorageModule"]);
     angular.module("app").config(AppConfig);
 }
