@@ -9,14 +9,14 @@ var App;
         function Entity() {
         }
         return Entity;
-    })();
+    }());
     var Student = (function (_super) {
         __extends(Student, _super);
         function Student() {
             _super.apply(this, arguments);
         }
         return Student;
-    })(Entity);
+    }(Entity));
     App.Student = Student;
 })(App || (App = {}));
 //# sourceMappingURL=Student.js.map

@@ -36,7 +36,7 @@ var App;
         }
         AppConfig.$inject = ["$stateProvider", "$urlRouterProvider"];
         return AppConfig;
-    })();
+    }());
     App.AppConfig = AppConfig;
     angular.module("app", ["ngResource", "ui.router"]);
     angular.module("app").config(AppConfig);

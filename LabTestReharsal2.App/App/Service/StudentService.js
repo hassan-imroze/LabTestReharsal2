@@ -53,7 +53,7 @@ var App;
         };
         StudentService.$inject = ["$http", "$q"];
         return StudentService;
-    })();
+    }());
     App.StudentService = StudentService;
     angular.module("app").service("StudentService", StudentService);
 })(App || (App = {}));
