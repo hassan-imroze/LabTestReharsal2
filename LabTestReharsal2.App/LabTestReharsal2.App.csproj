@@ -265,6 +265,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Index.html" />
+    <Content Include="Partials\account\signup.tpl.html" />
     <Content Include="Partials\Student\studententry.tpl.html" />
     <Content Include="Partials\Student\students.tpl.html" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
@@ -278,6 +279,8 @@
     <Content Include="Scripts\angular-csp.css" />
     <Content Include="Scripts\angular-loader.js" />
     <Content Include="Scripts\angular-loader.min.js" />
+    <Content Include="Scripts\angular-local-storage.js" />
+    <Content Include="Scripts\angular-local-storage.min.js" />
     <Content Include="Scripts\angular-message-format.js" />
     <Content Include="Scripts\angular-message-format.min.js" />
     <Content Include="Scripts\angular-messages.js" />
@@ -337,6 +340,7 @@
     <Content Include="App\Controller\StudentQueryController.js.map" />
     <Content Include="App\Model\Student.js.map" />
     <Content Include="App\Service\StudentService.js.map" />
+    <Content Include="Scripts\angular-local-storage.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -1122,10 +1126,16 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="App\App.Config.ts" />
+    <TypeScriptCompile Include="App\Controller\SigninController.ts" />
+    <TypeScriptCompile Include="App\Controller\SignUpController.ts" />
     <TypeScriptCompile Include="App\Controller\StudentController.ts" />
     <TypeScriptCompile Include="App\Controller\StudentQueryController.ts" />
+    <TypeScriptCompile Include="App\Model\Register.ts" />
     <TypeScriptCompile Include="App\Model\Student.ts" />
+    <TypeScriptCompile Include="App\Service\AccountService.ts" />
+    <TypeScriptCompile Include="App\Service\AuthService.ts" />
     <TypeScriptCompile Include="App\Service\StudentService.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-local-storage\angular-local-storage.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui-router\angular-ui-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />

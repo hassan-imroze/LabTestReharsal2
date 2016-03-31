@@ -27,6 +27,16 @@
                     templateUrl: "partials/Student/studententry.tpl.html",
                     controller: "StudentController",
                     controllerAs: "vm"
+                }).state("root.signup", {
+                    url: "/signUp",
+                    templateUrl: "partials/account/signup.tpl.html",
+                    controller: "SignUpController",
+                    controllerAs: "vm"
+                }).state("root.signin", {
+                    url: "/signin",
+                    templateUrl: "partials/account/signin.tpl.html",
+                    controller: "SigninController",
+                    controllerAs: "vm"
                 });
         }
     }

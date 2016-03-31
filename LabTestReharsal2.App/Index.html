@@ -16,6 +16,8 @@
             <!--<li><a ui-sref="root">Root</a></li>-->
             <li><a ui-sref="root.students">Students</a></li>
             <li><a ui-sref="root.studentEntry">Register Student</a></li>
+            <li><a ui-sref="root.signup">Sign Up</a></li>
+            <li><a ui-sref="root.signin">Sign In</a></li>
         </ul>
     </nav>
     <div ui-view></div>
@@ -26,8 +28,12 @@
     <script src="Scripts/angular-resource.js"></script>
     <script src="App/App.Config.js"></script>
     <script src="App/Model/Student.js"></script>
+    <script src="App/Model/Register.js"></script>
     <script src="App/Controller/StudentQueryController.js"></script>
     <script src="App/Controller/StudentController.js"></script>
+    <script src="App/Controller/SignUpController.js"></script>
     <script src="App/Service/StudentService.js"></script>
+    <script src="App/Service/AccountService.js"></script>
+    <script src="App/Service/AuthService.js"></script>
 </body>
 </html>
