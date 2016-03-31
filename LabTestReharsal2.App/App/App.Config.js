@@ -41,4 +41,3 @@ var App;
     angular.module("app", ["ngResource", "ui.router"]);
     angular.module("app").config(AppConfig);
 })(App || (App = {}));
-//# sourceMappingURL=App.Config.js.map
