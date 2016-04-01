@@ -17,7 +17,7 @@
             console.log("Here 1");
             this.studentService.Get()
                 .then((result: any) => { console.log("Here 3"); self.Students = result.data as Student[]; },
-                error => { alert(error); });
+                error => { alert(error.data.Message); });
         }
     }
 

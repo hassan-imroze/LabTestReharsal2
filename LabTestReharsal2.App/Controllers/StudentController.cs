@@ -18,6 +18,8 @@ namespace LabTestReharsal.App.Controllers
         {
             service = new StudentService(db);
         }
+
+        [System.Web.Http.Authorize]
         // GET: Student
         public IHttpActionResult Get()
         {

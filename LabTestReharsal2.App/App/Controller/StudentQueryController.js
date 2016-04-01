@@ -12,7 +12,7 @@ var App;
             var self = this;
             console.log("Here 1");
             this.studentService.Get()
-                .then(function (result) { console.log("Here 3"); self.Students = result.data; }, function (error) { alert(error); });
+                .then(function (result) { console.log("Here 3"); self.Students = result.data; }, function (error) { alert(error.data.Message); });
         };
         StudentQueryController.$inject = ["StudentService"];
         return StudentQueryController;
@@ -20,3 +20,4 @@ var App;
     App.StudentQueryController = StudentQueryController;
     angular.module("app").controller("StudentQueryController", StudentQueryController);
 })(App || (App = {}));
+//# sourceMappingURL=StudentQueryController.js.map

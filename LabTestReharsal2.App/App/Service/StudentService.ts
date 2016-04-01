@@ -5,11 +5,13 @@
 
         private httpService: angular.IHttpService;
         private qService: angular.IQService;
-        static $inject: string[] = ["$http", "$q"];
+        private AuthSrvice: AuthService;
+        static $inject: string[] = ["$http", "$q","AuthService"];
 
-        constructor($http: angular.IHttpService, $q: angular.IQService) {
+        constructor($http: angular.IHttpService, $q: angular.IQService, authSvc: AuthService) {
             this.httpService = $http;
             this.qService = $q;
+            this.AuthSrvice = authSvc;
         }
 
         Get() {
@@ -25,7 +27,8 @@
                 return deffered.reject(error);
             };
 
-            self.httpService.get("/api/Student")
+            var config: angular.IRequestShortcutConfig = { headers: { 'Authorization': "Bearer " + self.AuthSrvice.AccountInfo.AccessToken } };
+            self.httpService.get("/api/Student", config)
                 .then(successCallback, errorCallback);
             return deffered.promise;
         }

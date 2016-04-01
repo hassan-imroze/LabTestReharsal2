@@ -2,9 +2,10 @@ var App;
 (function (App) {
     "use strict";
     var StudentService = (function () {
-        function StudentService($http, $q) {
+        function StudentService($http, $q, authSvc) {
             this.httpService = $http;
             this.qService = $q;
+            this.AuthSrvice = authSvc;
         }
         StudentService.prototype.Get = function () {
             var self = this;
@@ -17,7 +18,8 @@ var App;
                 console.log(error);
                 return deffered.reject(error);
             };
-            self.httpService.get("/api/Student")
+            var config = { headers: { 'Authorization': "Bearer " + self.AuthSrvice.AccountInfo.AccessToken } };
+            self.httpService.get("/api/Student", config)
                 .then(successCallback, errorCallback);
             return deffered.promise;
         };
@@ -51,9 +53,10 @@ var App;
                 .then(successCallback, errorCallback);
             return deffered.promise;
         };
-        StudentService.$inject = ["$http", "$q"];
+        StudentService.$inject = ["$http", "$q", "AuthService"];
         return StudentService;
     }());
     App.StudentService = StudentService;
     angular.module("app").service("StudentService", StudentService);
 })(App || (App = {}));
+//# sourceMappingURL=StudentService.js.map
