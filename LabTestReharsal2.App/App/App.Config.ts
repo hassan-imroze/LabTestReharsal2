@@ -16,7 +16,7 @@
                     template: "<div ui-view class=\"container-fluid slide\"></div>",
                 })
                 
-                .state("root.students", {
+                .state("root.students", { 
                     url: "/Students",
                     templateUrl: "Partials/Student/students.tpl.html",
                     controller: "StudentQueryController",

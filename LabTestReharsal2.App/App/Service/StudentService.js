@@ -59,4 +59,3 @@ var App;
     App.StudentService = StudentService;
     angular.module("app").service("StudentService", StudentService);
 })(App || (App = {}));
-//# sourceMappingURL=StudentService.js.map

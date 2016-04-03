@@ -70,4 +70,3 @@ var App;
     App.StudentController = StudentController;
     angular.module("app").controller("StudentController", StudentController);
 })(App || (App = {}));
-//# sourceMappingURL=StudentController.js.map
