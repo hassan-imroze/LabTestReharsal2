@@ -3,6 +3,9 @@ var App;
     "use strict";
     var AccountInfo = (function () {
         function AccountInfo() {
+            this.Username = "";
+            this.AccessToken = "";
+            this.IsAuthenticated = false;
         }
         return AccountInfo;
     }());
@@ -12,9 +15,16 @@ var App;
             this.AccountInfo = new AccountInfo();
             this.localStorageService = localStorageService;
         }
-        AuthService.prototype.SetInfo = function (acc) {
+        AuthService.prototype.SetInfo = function () {
             var self = this;
-            self.localStorageService.set("AccountInfo", acc);
+            self.localStorageService.set("AccountInfo", self.AccountInfo);
+        };
+        AuthService.prototype.FillAuthData = function () {
+            var self = this;
+            self.AccountInfo = self.localStorageService.get("AccountInfo");
+        };
+        AuthService.prototype.IsAuthenticated = function () {
+            return this.AccountInfo && this.AccountInfo.IsAuthenticated;
         };
         AuthService.$inject = ["localStorageService"];
         return AuthService;

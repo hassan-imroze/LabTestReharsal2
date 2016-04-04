@@ -29,6 +29,8 @@ var App;
                 console.log(result);
                 self.authService.AccountInfo.Username = result.data.userName;
                 self.authService.AccountInfo.AccessToken = result.data.access_token;
+                self.authService.AccountInfo.IsAuthenticated = true;
+                self.authService.SetInfo();
                 return deffered.resolve(result);
             };
             var errorCallback = function (error) {
