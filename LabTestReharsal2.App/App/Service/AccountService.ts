@@ -5,7 +5,7 @@
 
         private httpService: angular.IHttpService;
         private qService: angular.IQService;
-        private authService: AuthService; 
+        authService: AuthService; 
         static $inject: string[] = ["$http", "$q", "AuthService"];
 
         constructor($http: angular.IHttpService, $q: angular.IQService, authSvc: AuthService ) {

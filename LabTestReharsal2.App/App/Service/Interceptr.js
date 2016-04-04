@@ -9,7 +9,7 @@
                //  config.headers.Mama = 'mamamama';
                authService.FillAuthData();
                if (authService.IsAuthenticated()) {
-                   config.headers.Authorization = "Bearer " + authData.AccessToken;
+                   config.headers.Authorization = "Bearer " + authService.AccountInfo.AccessToken;
                    config.headers.Mama = new Date().toJSON();
                }
 

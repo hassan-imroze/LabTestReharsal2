@@ -29,6 +29,10 @@
         FillAuthData(): void {
             var self = this;
             self.AccountInfo = <any>self.localStorageService.get("AccountInfo");
+            if (self.AccountInfo === null || self.AccountInfo === undefined) {
+                self.AccountInfo = new AccountInfo();
+            }
+
         }
 
         IsAuthenticated(): boolean {

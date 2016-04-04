@@ -11,9 +11,8 @@
             console.log('i m in appconfig.ts');
             $stateProvider
                 .state("root", {
-                    abstract: true,
                     url: "",
-                    template: "<div ui-view class=\"container-fluid slide\"></div>",
+                    template: "<div ui-view class=\"container-fluid slide\">This is Home</div>",
                 })
                 
                 .state("root.students", { 

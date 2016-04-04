@@ -22,6 +22,9 @@ var App;
         AuthService.prototype.FillAuthData = function () {
             var self = this;
             self.AccountInfo = self.localStorageService.get("AccountInfo");
+            if (self.AccountInfo === null || self.AccountInfo === undefined) {
+                self.AccountInfo = new AccountInfo();
+            }
         };
         AuthService.prototype.IsAuthenticated = function () {
             return this.AccountInfo && this.AccountInfo.IsAuthenticated;
