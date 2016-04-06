@@ -49,3 +49,4 @@ var App;
     App.AccountService = AccountService;
     angular.module("app").service("AccountService", AccountService);
 })(App || (App = {}));
+//# sourceMappingURL=AccountService.js.map

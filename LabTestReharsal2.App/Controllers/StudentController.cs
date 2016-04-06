@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace LabTestReharsal.App.Controllers
 {
@@ -19,12 +20,20 @@ namespace LabTestReharsal.App.Controllers
             service = new StudentService(db);
         }
 
-        [System.Web.Http.Authorize]
+        [System.Web.Http.Authorize(Roles = "Owner,Customer")]
         // GET: Student
         public IHttpActionResult Get()
         {
             try
             {
+                if(User.IsInRole("Owner"))
+                {
+
+                }
+                else
+                {
+
+                }
                 List<StudentViewModel> models = service.GetAll();
                 return Ok(models);
             }
