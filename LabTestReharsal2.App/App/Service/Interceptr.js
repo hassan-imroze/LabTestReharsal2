@@ -1,4 +1,7 @@
-﻿angular.module('app').factory("authInterceptorService", [
+﻿var App;
+(function (App) {
+
+angular.module('app').factory("authInterceptorService", [
        "$q", "$injector", "AuthService", function ($q, $injector, authService) {
 
            var authInterceptorServiceFactory = {};
@@ -30,13 +33,15 @@
            return authInterceptorServiceFactory;
        }
 ]);
+
+
 angular.module("app").config(['$httpProvider', function ($httpProvider) {
     $httpProvider.interceptors.push("authInterceptorService");
 }]);
 
 //angular.module("app").run([
-//    "AuthService", authService => {
-//        authService.FillAuthData();
+//        "AuthService", AuthService => {
+//        AuthService.FillAuthData();
 //    }
 //]);
 
@@ -49,3 +54,5 @@ angular.module("app").run([
               });
       }
 ]);
+
+})(App || (App = {}));
