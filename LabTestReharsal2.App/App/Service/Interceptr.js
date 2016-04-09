@@ -39,11 +39,12 @@ angular.module("app").config(['$httpProvider', function ($httpProvider) {
     $httpProvider.interceptors.push("authInterceptorService");
 }]);
 
-//angular.module("app").run([
-//        "AuthService", AuthService => {
-//        AuthService.FillAuthData();
-//    }
-//]);
+angular.module("app").run([
+        'AuthService', function (AuthService) {
+            console.log('Inside Run');
+        AuthService.FillAuthData();
+    }
+]);
 
 angular.module("app").run([
       "$rootScope", "$state",  "AuthService", function ($rootScope, $state, authService) {
