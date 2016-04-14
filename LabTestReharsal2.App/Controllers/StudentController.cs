@@ -12,12 +12,12 @@ using System.Web.Security;
 
 namespace LabTestReharsal.App.Controllers
 {
-    public class StudentController : BaseController
+    public class StudentController : BaseController<Student>
     {
-        StudentService service;
-        public StudentController()
+        
+        public StudentController():base(new StudentService(new BusinessDbContext()))
         {
-            service = new StudentService(db);
+            
         }
 
         [System.Web.Http.Authorize(Roles = "Owner,Customer")]
@@ -34,7 +34,7 @@ namespace LabTestReharsal.App.Controllers
                 {
 
                 }
-                List<StudentViewModel> models = service.GetAll();
+                List<StudentViewModel> models = ((StudentService)service).GetAll();
                 return Ok(models);
             }
             catch (Exception ex)
@@ -50,7 +50,7 @@ namespace LabTestReharsal.App.Controllers
             try
             {
                 
-                return Ok(service.EmailExists(email));
+                return Ok(((StudentService)service).EmailExists(email));
             }
             catch (Exception ex)
             {
@@ -66,8 +66,8 @@ namespace LabTestReharsal.App.Controllers
 
             try
             {
-                string id = service.Save(student);
-                return Ok(id);
+                bool saved = service.Save(student);
+                return Ok(saved);
             }
             catch (ArgumentException ex)
             {

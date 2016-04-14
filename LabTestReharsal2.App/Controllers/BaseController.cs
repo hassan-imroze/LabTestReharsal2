@@ -1,4 +1,5 @@
 ﻿using LabTestReharsal.Model;
+using LabTestReharsal.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +9,14 @@ using System.Web.Mvc;
 
 namespace LabTestReharsal.App.Controllers
 {
-    public class BaseController : ApiController
+    public class BaseController<T> : ApiController where T : Entity
     {
-            protected BusinessDbContext db;
+            protected BaseService<T> service;
 
-            // GET: Base
-            public BaseController()
+        // GET: Base
+            public BaseController(BaseService<T> service)
             {
-                db = new BusinessDbContext();
+                this.service = service;
             }
     }
 }

@@ -9,42 +9,39 @@ using System.Threading.Tasks;
 
 namespace LabTestReharsal.Service
 {
-   public class StudentService : BaseService
+   public class StudentService : BaseService<Student>
     {
-        StudentRepository studentReository;
+        
         CityRepository cityRepository;
 
-        public StudentService(BusinessDbContext db): base(db)
+        public StudentService(BusinessDbContext db): base(new StudentRepository(db))
         {
-            studentReository = new StudentRepository(_dbContext);
-            cityRepository = new CityRepository(_dbContext);
+            cityRepository = new CityRepository(db);
         }
 
         public List<StudentViewModel> GetAll()
         {
-            IQueryable<Student> queryable = studentReository.GetAll();
+            IQueryable<Student> queryable = base.GetAll();
             var studentViewModels = queryable.ToList().Select(x => new StudentViewModel(x)).ToList();
             return studentViewModels;
         }
 
-        public string Save(Student student)
+        public override bool  Save(Student student)
         {
             bool cityExist = cityRepository.CityExists(student.City);
             if (!cityExist)
             {
-                throw new ArgumentException("City Does not Exists");
-                
+                throw new ArgumentException("City Does not Exists");      
             }
 
-            return studentReository.Add(student);
+            return base.Save(student);
 
 
         }
 
-       
         public bool EmailExists(string email)
         {
-            return studentReository.EmailExists(email);
+            return ((StudentRepository)base.repository).EmailExists(email);
             
         }
     }
