@@ -5,7 +5,7 @@
 
         private httpService: angular.IHttpService;
         private qService: angular.IQService;
-        private authService: AuthService; 
+        authService: AuthService; 
         static $inject: string[] = ["$http", "$q", "AuthService"];
 
         constructor($http: angular.IHttpService, $q: angular.IQService, authSvc: AuthService ) {
@@ -40,6 +40,8 @@
                 console.log(result);
                 self.authService.AccountInfo.Username = result.data.userName;
                 self.authService.AccountInfo.AccessToken = result.data.access_token;
+                self.authService.AccountInfo.IsAuthenticated = true;
+                self.authService.SetInfo();
                 return deffered.resolve(result);
             };
             var errorCallback = error => {

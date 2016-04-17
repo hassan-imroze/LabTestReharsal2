@@ -15,15 +15,19 @@
         isSaving: boolean;
 
         private accService: AccountService;
+        private stateService: angular.ui.IStateService;
+        static $inject: string[] = ["AccountService","$state"];
 
-        static $inject: string[] = ["AccountService"];
-
-        constructor(accSvc: AccountService) {
+        constructor(accSvc: AccountService, state: angular.ui.IStateService) {
             this.accService = accSvc;
+            this.stateService = state;
             this.Activate();
         }
 
         Activate() {
+            if (this.accService.authService.IsAuthenticated()) {
+                this.stateService.go('root');
+            }
             console.log('i m in signin controller activate method');
         }
 
@@ -37,6 +41,7 @@
                 self.statusClass = "successList";
                 self.ErrorOrSuccessList.push("Signed In");
                 self.isSaving = false;
+                self.stateService.go('root');
             }
 
             var error = function (error) {

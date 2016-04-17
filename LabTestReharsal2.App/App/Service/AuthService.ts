@@ -4,6 +4,12 @@
     export class AccountInfo {
         Username: string;
         AccessToken: string;
+        IsAuthenticated: boolean;
+        constructor() {
+            this.Username = "";
+            this.AccessToken = "";
+            this.IsAuthenticated = false;
+        } 
     }
 
     export class AuthService {
@@ -15,11 +21,23 @@
             this.localStorageService = localStorageService;
         }
 
-        SetInfo(acc: AccountInfo): void {
+        SetInfo(): void {
             var self = this;
-            self.localStorageService.set("AccountInfo", acc);
+            self.localStorageService.set("AccountInfo", self.AccountInfo);
         }
 
+        FillAuthData(): void {
+            var self = this;
+            self.AccountInfo = <any>self.localStorageService.get("AccountInfo");
+            if (self.AccountInfo === null || self.AccountInfo === undefined) {
+                self.AccountInfo = new AccountInfo();
+            }
+
+        }
+
+        IsAuthenticated(): boolean {
+            return this.AccountInfo && this.AccountInfo.IsAuthenticated;
+        }
 
     }
 

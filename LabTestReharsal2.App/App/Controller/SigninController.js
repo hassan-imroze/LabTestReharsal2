@@ -8,12 +8,16 @@ var App;
     }());
     App.SigninRequest = SigninRequest;
     var SigninController = (function () {
-        function SigninController(accSvc) {
+        function SigninController(accSvc, state) {
             this.Title = "SigninController";
             this.accService = accSvc;
+            this.stateService = state;
             this.Activate();
         }
         SigninController.prototype.Activate = function () {
+            if (this.accService.authService.IsAuthenticated()) {
+                this.stateService.go('root');
+            }
             console.log('i m in signin controller activate method');
         };
         SigninController.prototype.Signin = function () {
@@ -25,6 +29,7 @@ var App;
                 self.statusClass = "successList";
                 self.ErrorOrSuccessList.push("Signed In");
                 self.isSaving = false;
+                self.stateService.go('root');
             };
             var error = function (error) {
                 console.log(error);
@@ -34,7 +39,7 @@ var App;
             };
             self.accService.SignIn(self.User).then(success, error);
         };
-        SigninController.$inject = ["AccountService"];
+        SigninController.$inject = ["AccountService", "$state"];
         return SigninController;
     }());
     App.SigninController = SigninController;

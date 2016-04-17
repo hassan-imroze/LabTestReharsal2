@@ -7,23 +7,19 @@ using System.Threading.Tasks;
 
 namespace LabTestReharsal.Repository
 {
-    public class StudentRepository : BaseRepository
+    public class StudentRepository : BaseRepository<Student>
     {
         public StudentRepository(BusinessDbContext db) : base(db)
         {
 
         }
-        public IQueryable<Student> GetAll()
-        {
-            return Db.Students.AsQueryable();
-        }
 
-        public string Add(Student student)
-        {
-            Student added = Db.Students.Add(student);
-            Db.SaveChanges();
-            return added.Id;
-        }
+        //public string Add(Student student)
+        //{
+        //    Student added = Db.Students.Add(student);
+        //    Db.SaveChanges();
+        //    return added.Id;
+        //}
 
         public bool EmailExists(string email)
         {
