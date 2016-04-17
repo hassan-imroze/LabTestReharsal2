@@ -5,11 +5,16 @@ var App;
             this.stateProvider = $stateProvider;
             this.urlProvider = $urlRouterProvider;
             console.log('i m in appconfig.ts');
+            $urlRouterProvider.otherwise("/");
             $stateProvider
                 .state("root", {
                 abstract: true,
                 url: "",
                 template: "<div ui-view class=\"container-fluid slide\"></div>",
+            })
+                .state("root.home", {
+                url: "/",
+                template: "This is Home",
             })
                 .state("root.students", {
                 url: "/Students",
