@@ -16,7 +16,7 @@ var App;
         }
         SigninController.prototype.Activate = function () {
             if (this.accService.authService.IsAuthenticated()) {
-                this.stateService.go('root');
+                this.stateService.go('root.home');
             }
             console.log('i m in signin controller activate method');
         };

@@ -27,8 +27,7 @@
                 return deffered.reject(error);
             };
 
-            var config: angular.IRequestShortcutConfig = { headers: { 'Authorization': "Bearer " + self.AuthSrvice.AccountInfo.AccessToken } };
-            self.httpService.get("/api/Student", config)
+            self.httpService.get("/api/Student")
                 .then(successCallback, errorCallback);
             return deffered.promise;
         }

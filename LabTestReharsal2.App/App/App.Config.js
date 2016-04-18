@@ -8,8 +8,9 @@ var App;
             $urlRouterProvider.otherwise("/");
             $stateProvider
                 .state("root", {
+                abstract: true,
                 url: "",
-                template: "<div ui-view class=\"container-fluid slide\">This is Home</div>",
+                template: "<div ui-view class=\"container-fluid slide\"></div>",
             })
                 .state("root.home", {
                 url: "/",

@@ -10,7 +10,7 @@ angular.module('app').factory("authInterceptorService", [
 
                config.headers = config.headers || {};
                //  config.headers.Mama = 'mamamama';
-               authService.FillAuthData();
+               //authService.FillAuthData();
                if (authService.IsAuthenticated()) {
                    config.headers.Authorization = "Bearer " + authService.AccountInfo.AccessToken;
                    config.headers.Mama = new Date().toJSON();
