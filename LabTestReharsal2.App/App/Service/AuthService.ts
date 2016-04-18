@@ -34,7 +34,11 @@
             }
 
         }
+        SignOut(): void {
 
+            this.localStorageService.remove("AccountInfo");
+            this.AccountInfo = new AccountInfo();
+        }
         IsAuthenticated(): boolean {
             return this.AccountInfo && this.AccountInfo.IsAuthenticated;
         }

@@ -26,6 +26,10 @@ var App;
                 self.AccountInfo = new AccountInfo();
             }
         };
+        AuthService.prototype.SignOut = function () {
+            this.localStorageService.remove("AccountInfo");
+            this.AccountInfo = new AccountInfo();
+        };
         AuthService.prototype.IsAuthenticated = function () {
             return this.AccountInfo && this.AccountInfo.IsAuthenticated;
         };

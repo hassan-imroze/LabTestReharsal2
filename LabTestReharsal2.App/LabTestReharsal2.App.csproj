@@ -226,11 +226,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\App.Config.js" />
-    <Content Include="App\Controller\StudentController.js" />
-    <Content Include="App\Controller\StudentQueryController.js" />
     <Content Include="App\Model\Student.js" />
     <Content Include="App\Service\Interceptr.js" />
-    <Content Include="App\Service\StudentService.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -239,6 +236,9 @@
     <Content Include="Index.html" />
     <Content Include="Partials\account\signin.tpl.html" />
     <Content Include="Partials\account\signup.tpl.html" />
+    <Content Include="Partials\home\home.tpl.html" />
+    <Content Include="Partials\home\side-menu.tpl.html" />
+    <Content Include="Partials\nav.html" />
     <Content Include="Partials\Student\studententry.tpl.html" />
     <Content Include="Partials\Student\students.tpl.html" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
@@ -278,10 +278,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="App\App.Config.js.map" />
-    <Content Include="App\Controller\StudentController.js.map" />
-    <Content Include="App\Controller\StudentQueryController.js.map" />
     <Content Include="App\Model\Student.js.map" />
-    <Content Include="App\Service\StudentService.js.map" />
     <Content Include="Scripts\angular-local-storage.min.js.map" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -1082,6 +1079,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="App\App.Config.ts" />
+    <TypeScriptCompile Include="App\Controller\NavController.ts" />
     <TypeScriptCompile Include="App\Controller\SigninController.ts" />
     <TypeScriptCompile Include="App\Controller\SignUpController.ts" />
     <TypeScriptCompile Include="App\Controller\StudentController.ts" />

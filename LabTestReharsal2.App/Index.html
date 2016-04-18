@@ -8,19 +8,45 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-inverse" role="navigation">
+    <!--<nav class="navbar navbar-inverse" role="navigation">
         <div class="navbar-header">
-            <a class="navbar-brand" ui-sref="root">Student Registration</a>
+            <a class="navbar-brand" ui-sref="root.home">Student Registration</a>
         </div>
         <ul class="nav navbar-nav">
-            <!--<li><a ui-sref="root">Root</a></li>-->
             <li><a ui-sref="root.students">Students</a></li>
             <li><a ui-sref="root.studentEntry">Register Student</a></li>
             <li><a ui-sref="root.signup">Sign Up</a></li>
             <li><a ui-sref="root.signin">Sign In</a></li>
         </ul>
-    </nav>
-    <div ui-view></div>
+    </nav>-->
+
+    <header ng-include="'partials/nav.html'"></header>
+
+    <div class="container-fluid main-container">
+        <div class="row">
+            <div class="col-md-2 sidebar">
+                <div class="row">
+                    <!-- uncomment code for absolute positioning tweek see top comment in css -->
+                    <div class="absolute-wrapper"> </div>
+                    <!-- Menu -->
+                    <!--<div class="side-menu">
+                        <div ng-include="'partials/home/side-menu.tpl.html'"></div>
+                    </div>-->
+                </div>
+            </div>
+            <div class="col-md-10 content">
+                <div ui-view></div>
+            </div>
+        </div>
+
+        <footer class="pull-left footer">
+            <p class="col-md-12">
+                <hr class="divider">
+                Copyright Syed &COPY; 2016
+            </p>
+        </footer>
+    </div>
+
     <script src="Scripts/jquery-2.2.2.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <script src="Scripts/angular.js"></script>
@@ -31,6 +57,7 @@
     <script src="App/Service/Interceptr.js"></script>
     <script src="App/Model/Student.js"></script>
     <script src="App/Model/Register.js"></script>
+    <script src="App/Controller/NavController.js"></script>
     <script src="App/Controller/StudentQueryController.js"></script>
     <script src="App/Controller/StudentController.js"></script>
     <script src="App/Controller/SignUpController.js"></script>

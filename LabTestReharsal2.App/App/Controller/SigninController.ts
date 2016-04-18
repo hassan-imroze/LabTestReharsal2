@@ -16,11 +16,13 @@
 
         private accService: AccountService;
         private stateService: angular.ui.IStateService;
-        static $inject: string[] = ["AccountService","$state"];
+        private rootScopeService: angular.IRootScopeService;
+        static $inject: string[] = ["AccountService", "$state", "$rootScope"];
 
-        constructor(accSvc: AccountService, state: angular.ui.IStateService) {
+        constructor(accSvc: AccountService, state: angular.ui.IStateService, $rootScope: angular.IRootScopeService) {
             this.accService = accSvc;
             this.stateService = state;
+            this.rootScopeService = $rootScope;
             this.Activate();
         }
 
@@ -40,8 +42,9 @@
                 console.log(result);
                 self.statusClass = "successList";
                 self.ErrorOrSuccessList.push("Signed In");
+                self.rootScopeService.$broadcast("SignedIn");
                 self.isSaving = false;
-                self.stateService.go('root');
+                self.stateService.go('root.home');
             }
 
             var error = function (error) {
@@ -54,6 +57,9 @@
 
             self.accService.SignIn(self.User).then(success, error);
         }
+
+        
+        
     }
 
     angular.module("app").controller("SigninController", SigninController);
