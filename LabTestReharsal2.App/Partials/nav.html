@@ -13,7 +13,7 @@
         });
     });
 </script>
-<nav class="navbar navbar-default navbar-static-top" ng-controller="NavController as vm">
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavController as vm">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -39,7 +39,7 @@
                 <li class="dropdown ">
                     <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         <span ng-hide="vm.IsSignedIn">Account</span>
-                        <span ng-show="vm.IsSignedIn">{{vm.User.UserName}}</span>
+                        <span ng-show="vm.IsSignedIn">{{vm.User.Username}}</span>
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu" ng-hide="vm.IsSignedIn">
